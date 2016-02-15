@@ -42,5 +42,4 @@ inquirer.prompt questions, (answer) ->
 
     console.log ''
     console.log dim stdout
-    console.log dim stderr
     console.log "#{green bold name} version #{cyan bold target-version} successfully released\n"
