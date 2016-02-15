@@ -1,9 +1,10 @@
 {
   "name": "port-reservation",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Kevin Goslar",
   "dependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "portfinder": "^0.4.0"
   },
   "description": "Finds and reserves free network ports on the local machine",
   "devDependencies": {
