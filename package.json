@@ -1,6 +1,6 @@
 {
   "name": "port-reservation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Kevin Goslar",
   "dependencies": {
     "portfinder": "^0.4.0"
@@ -28,6 +28,9 @@
     "url": "git+https://github.com/Originate/port-reservation.git"
   },
   "scripts": {
+    "postpublish": "git push && git push --tags",
+    "prepublish": "bin/build",
+    "preversion": "npm test",
     "test": "bin/spec"
   }
 }
