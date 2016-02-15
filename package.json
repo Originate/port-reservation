@@ -1,0 +1,19 @@
+{
+  "name": "port-reservation",
+  "version": "1.0.0",
+  "description": "Finds and reserves free network ports on the local machine",
+  "main": "dist/port-reservation.js",
+  "scripts": {
+    "test": "bin/spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Originate/port-reservation.git"
+  },
+  "author": "Kevin Goslar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Originate/port-reservation/issues"
+  },
+  "homepage": "https://github.com/Originate/port-reservation#readme"
+}
