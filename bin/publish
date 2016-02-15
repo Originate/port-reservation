@@ -39,13 +39,12 @@ inquirer.prompt questions, (answer) ->
       console.log stderr
       process.exit 1
     console.log ''
-    console.log dim stdout
+    console.log dim stdout.replace('\n', '')
     child_process.exec "npm publish", (err, stdout, stderr) ->
       if err
         console.log bold red '\nAn error occured!'
         console.log stdout
         console.log stderr
         process.exit 1
-      console.log ''
-      console.log dim stdout
+      console.log dim stdout.replace('\n', '')
       console.log "#{green bold name} version #{cyan bold target-version} successfully released\n"
