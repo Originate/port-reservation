@@ -6,3 +6,6 @@ machine:
 test:
   pre:
     - bin/build
+  post:
+    - node_modules/.bin/gulp coverage
+    - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
