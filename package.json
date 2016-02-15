@@ -20,6 +20,9 @@
     "mocha": "^2.4.5",
     "nitroglycerin": "^1.0.3"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/Originate/port-reservation",
   "license": "ISC",
   "main": "dist/port-reservation.js",
