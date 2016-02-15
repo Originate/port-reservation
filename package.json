@@ -28,6 +28,9 @@
     "url": "git+https://github.com/Originate/port-reservation.git"
   },
   "scripts": {
+    "postpublish": "git push && git push --tags",
+    "prepublish": "bin/build",
+    "preversion": "npm test",
     "test": "bin/spec"
   }
 }
