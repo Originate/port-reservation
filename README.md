@@ -16,3 +16,8 @@ for example
 when it takes a while
 to start up the processes
 that use these ports.
+
+
+## Development
+
+see our [developer documentation](CONTRIBUTING.md)
