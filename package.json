@@ -8,7 +8,9 @@
   "description": "Finds and reserves free network ports on the local machine",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chalk": "^1.1.1",
     "david": "^7.0.1",
+    "inquirer": "^0.12.0",
     "mocha": "^2.4.5",
     "nitroglycerin": "^1.0.3"
   },
