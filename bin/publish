@@ -1,7 +1,7 @@
 #!/usr/bin/env lsc
 
 require! {
-  'chalk' : {bold, cyan, green, red}
+  'chalk' : {bold, cyan, dim, green, red}
   'child_process'
   'inquirer'
   '../package.json' : {name, version}
@@ -41,6 +41,6 @@ inquirer.prompt questions, (answer) ->
       process.exit 1
 
     console.log ''
-    console.log stdout
-    console.log stderr
-    console.log "\n#{green bold name} version #{cyan bold target-version} has been released\n"
+    console.log dim stdout
+    console.log dim stderr
+    console.log "#{green bold name} version #{cyan bold target-version} has been released\n"
