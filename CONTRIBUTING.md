@@ -4,7 +4,8 @@
 
 * `npm i`
 * add `./bin/` to your PATH to run the commands in `bin`
-  without having to provide the path to them
+  without having to provide the path to them.
+  If you don't do this, you  have to append `bin/` to all commands below.
 
 
 ## File setup
@@ -36,13 +37,13 @@
 * run all tests:
 
   ```
-  bin/spec
+  spec
   ```
 
 * run a single test:
 
   ```
-  bin/spec <path to test file>[:<line>]
+  spec <path to test file>[:<line>]
   ```
 
 
