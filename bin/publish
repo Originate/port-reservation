@@ -13,6 +13,14 @@ display-help = ->
   process.exit 1
 
 
+display-runtime-error = (err, stdout, stderr) ->
+  console.log bold red '\nAn error occured!'
+  console.log err
+  console.log stdout
+  console.log stderr
+  process.exit 1
+
+
 if process.argv.length != 3
   display-help!
 
@@ -23,28 +31,21 @@ if ['-h', '--help'].index-of(level) > -1
 target-version = semver.inc version, level
 
 console.log "\nYou are about to bump #{green bold name} version #{cyan bold version} up to #{cyan bold target-version}\n"
-questions =
+
+prompt-data =
   type: 'list'
   name: 'continue'
   message: 'Are you sure?'
   choices: ['yes', 'no']
-inquirer.prompt questions, (answer) ->
+inquirer.prompt prompt-data, (answer) ->
   if answer.continue == 'no'
     console.log '\nAborting ...\n'
     process.exit!
+
   child_process.exec "npm version #{level}", (err, stdout, stderr) ->
-    if err
-      console.log bold red '\nAn error occured!'
-      console.log stdout
-      console.log stderr
-      process.exit 1
-    console.log ''
-    console.log dim stdout.replace('\n', '')
+    if err then display-runtime-error err, stdout, stderr
+    console.log dim "\n#{stdout.replace('\n', '')}"
     child_process.exec "npm publish", (err, stdout, stderr) ->
-      if err
-        console.log bold red '\nAn error occured!'
-        console.log stdout
-        console.log stderr
-        process.exit 1
+      if err then display-runtime-error err, stdout, stderr
       console.log dim stdout.replace('\n', '')
       console.log "\n#{green bold name} version #{cyan bold target-version} successfully released\n"
