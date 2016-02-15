@@ -2,6 +2,8 @@
 
 > allows to reserve network ports for later use
 
+[![Circle CI](https://circleci.com/gh/Originate/port-reservation.svg?style=shield)](https://circleci.com/gh/Originate/port-reservation)
+
 This library is a thin wrapper around
 [PortFinder](https://github.com/indexzero/node-portfinder).
 It guarantees that
