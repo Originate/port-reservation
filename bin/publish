@@ -29,6 +29,9 @@ if ['-h', '--help'].index-of(level) > -1
   display-help!
 
 target-version = semver.inc version, level
+unless target-version
+  echo bold red "\nError: #{cyan} is not a valid version increment\n"
+  process.exit 1
 
 console.log "\nYou are about to bump #{green bold name} version #{cyan bold version} up to #{cyan bold target-version}\n"
 
