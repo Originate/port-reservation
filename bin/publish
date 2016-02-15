@@ -1,0 +1,50 @@
+#!/usr/bin/env lsc
+
+require! {
+  'chalk' : {bold, cyan, dim, green, red}
+  'child_process'
+  'inquirer'
+  '../package.json' : {name, version}
+  'semver'
+}
+
+display-help = ->
+  console.log "\nUsage:\n\n  #{bold 'publish <patch|minor|major>'}\n"
+  process.exit 1
+
+
+if process.argv.length != 3
+  display-help!
+
+level = process.argv[2]
+if ['-h', '--help'].index-of(level) > -1
+  display-help!
+
+target-version = semver.inc version, level
+
+console.log "\nYou are about to bump #{green bold name} version #{cyan bold version} up to #{cyan bold target-version}\n"
+questions =
+  type: 'list'
+  name: 'continue'
+  message: 'Are you sure?'
+  choices: ['yes', 'no']
+inquirer.prompt questions, (answer) ->
+  if answer.continue == 'no'
+    console.log '\nAborting ...\n'
+    process.exit!
+  child_process.exec "npm version #{level}", (err, stdout, stderr) ->
+    if err
+      console.log bold red '\nAn error occured!'
+      console.log stdout
+      console.log stderr
+      process.exit 1
+    console.log ''
+    console.log dim stdout.replace('\n', '')
+    child_process.exec "npm publish", (err, stdout, stderr) ->
+      if err
+        console.log bold red '\nAn error occured!'
+        console.log stdout
+        console.log stderr
+        process.exit 1
+      console.log dim stdout.replace('\n', '')
+      console.log "\n#{green bold name} version #{cyan bold target-version} successfully released\n"
