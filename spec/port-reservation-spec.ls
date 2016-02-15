@@ -29,7 +29,7 @@ describe 'port-reservation', ->
 
   describe 'get-port', (...) ->
 
-    it 'returns consecutive ports', (done) ->
+    it 'returns consecutive ports even if they are not used', (done) ->
       port-reservation.get-port N (port1) ->
         port-reservation.get-port N (port2) ->
           expect(port1).to.not.equal port2
