@@ -32,14 +32,20 @@ inquirer.prompt questions, (answer) ->
   if answer.continue == 'no'
     console.log '\nAborting ...\n'
     process.exit!
-
   child_process.exec "npm version #{level}", (err, stdout, stderr) ->
     if err
       console.log bold red '\nAn error occured!'
       console.log stdout
       console.log stderr
       process.exit 1
-
     console.log ''
     console.log dim stdout
-    console.log "#{green bold name} version #{cyan bold target-version} successfully released\n"
+    child_process.exec "npm release", (err, stdout, stderr) ->
+      if err
+        console.log bold red '\nAn error occured!'
+        console.log stdout
+        console.log stderr
+        process.exit 1
+      console.log ''
+      console.log dim stdout
+      console.log "#{green bold name} version #{cyan bold target-version} successfully released\n"
