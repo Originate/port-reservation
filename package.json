@@ -8,7 +8,8 @@
   },
   "description": "Finds and reserves free network ports on the local machine",
   "devDependencies": {
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "david": "^7.0.1"
   },
   "homepage": "https://github.com/Originate/port-reservation",
   "license": "ISC",
