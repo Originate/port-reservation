@@ -30,7 +30,7 @@ questions =
   choices: ['yes', 'no']
 inquirer.prompt questions, (answer) ->
   if answer.continue == 'no'
-    console.log 'Aborting the publishing process'
+    console.log '\nAborting ...\n'
     process.exit!
 
   child_process.exec "npm version #{level}", (err, stdout, stderr) ->
