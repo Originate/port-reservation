@@ -1,0 +1,30 @@
+# See https://github.com/charlierudolph/dependency-lint/blob/v3.1.2/docs/configuration.md
+# for a detailed explanation of the options
+
+allowUnused:
+  - coveralls
+  - dependency-lint
+  - livescript
+  - mocha
+  - o-tools
+
+devFilePatterns:
+  - '{features,spec,test}/**/*'
+  - '**/*{spec,test}.ls'
+  - gulpfile.ls
+
+devScripts:
+  - lint
+  - publish
+  - test
+
+filePattern: '**/*.ls'
+
+ignoreFilePatterns:
+  - 'node_modules/**/*'
+
+stripLoaders: false
+
+transpilers:
+  - extension: .ls
+    module: livescript

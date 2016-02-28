@@ -19,6 +19,7 @@
 
 ```
 $ spec [path to test file][:<line>]
+$ lint
 ```
 
 
