@@ -15,55 +15,22 @@
 * tests are in [spec](spec) and run against `dist`
 
 
-## Transpilation
-
-* this library is written in LiveScript and needs to be transpiled before testing it
-* transpile all code now:
-
-  ```
-  build
-  ```
-
-* transpile continuously as you make changes:
-
-  ```
-  watch
-  ```
-
-
 ## Testing
 
-* make sure your source code is transpiled (see above)
-* run all tests:
-
-  ```
-  spec
-  ```
-
-* run a single test:
-
-  ```
-  spec <path to test file>[:<line>]
-  ```
+```
+$ spec [path to test file][:<line>]
+```
 
 
 ## Update dependencies
 
-* check for updates:
-
-  ```
-  update-check
-  ```
-
-* update the dependencies:
-
-  ```
-  update
-  ```
+```
+$ update
+```
 
 
 ## Deploy a new version
 
 ```
-publish <patch|minor|major>
+$ publish <patch|minor|major>
 ```
