@@ -1,11 +1,21 @@
 machine:
+
   node:
     version: 5.1.0
 
+  environment:
+      MOCHA_FILE: "$CIRCLE_TEST_REPORTS/Mocha/test-results.xml"
+
 
 test:
+
   pre:
     - bin/build
+
+  override:
+    - bin/lint
+    - mocha --compilers ls:livescript "**/*spec.ls" --reporter mocha-circleci-reporter
+
   post:
     - node_modules/.bin/gulp coverage
     - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
