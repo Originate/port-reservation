@@ -3,20 +3,20 @@
   "version": "0.2.2",
   "author": "Kevin Goslar",
   "dependencies": {
-    "portfinder": "^0.4.0"
+    "portfinder": "0.4.0"
   },
   "description": "Finds and reserves free network ports on the local machine",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.6",
+    "chai": "3.5.0",
+    "coveralls": "2.11.6",
     "dependency-lint": "3.1.2",
-    "gulp": "^3.9.1",
+    "gulp": "3.9.1",
     "gulp-exit": "0.0.2",
     "gulp-livescript-istanbul": "0.0.2",
-    "gulp-mocha": "^2.2.0",
-    "livescript": "^1.4.0",
-    "mocha": "^2.4.5",
-    "nitroglycerin": "^1.0.3",
+    "gulp-mocha": "2.2.0",
+    "livescript": "1.4.0",
+    "mocha": "2.4.5",
+    "nitroglycerin": "1.0.3",
     "o-tools": "0.1.4"
   },
   "files": [
