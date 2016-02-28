@@ -20,7 +20,8 @@
     "o-tools": "0.1.4"
   },
   "files": [
-    "dist"
+    "dist",
+    "npm-shrinkwrap.json"
   ],
   "homepage": "https://github.com/Originate/port-reservation",
   "license": "ISC",
