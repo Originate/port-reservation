@@ -20,6 +20,9 @@
     "nitroglycerin": "1.0.3",
     "o-tools": "0.1.4"
   },
+  "engines": {
+    "npm": ">= 3.0.0"
+  },
   "files": [
     "dist",
     "npm-shrinkwrap.json"
