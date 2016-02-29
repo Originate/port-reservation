@@ -205,9 +205,9 @@
       "resolved": "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz"
     },
     "coveralls": {
-      "version": "2.11.6",
-      "from": "coveralls@2.11.6",
-      "resolved": "https://registry.npmjs.org/coveralls/-/coveralls-2.11.6.tgz",
+      "version": "2.11.8",
+      "from": "coveralls@2.11.8",
+      "resolved": "https://registry.npmjs.org/coveralls/-/coveralls-2.11.8.tgz",
       "dependencies": {
         "minimist": {
           "version": "1.2.0",
