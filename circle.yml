@@ -19,3 +19,11 @@ test:
   post:
     - node_modules/.bin/gulp coverage
     - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+
+deployment:
+  publish:
+    branch: release
+    commands:
+      - npm set //registry.npmjs.org/:_authToken $AUTH_TOKEN
+      - npm publish
