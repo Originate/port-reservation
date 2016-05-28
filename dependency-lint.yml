@@ -1,30 +1,35 @@
-# See https://github.com/charlierudolph/dependency-lint/blob/v3.1.2/docs/configuration.md
+# See https://github.com/charlierudolph/dependency-lint/blob/v4.0.1/docs/configuration.md
 # for a detailed explanation of the options
 
-allowUnused:
-  - coveralls
-  - dependency-lint
-  - livescript
-  - mocha
-  - o-tools
+executedModules:
+  npmScripts:
+    dev:
+      - publish
+  shellScripts:
+    dev:
+      - 'bin/*'
+    ignore: []
+    root: 'bin/*'
 
-devFilePatterns:
-  - '{features,spec,test}/**/*'
-  - '**/*{spec,test}.ls'
-  - gulpfile.ls
+ignoreErrors:
+  missing: []
+  shouldBeDependency: []
+  shouldBeDevDependency: []
+  unused:
+    - coveralls
+    - livescript
+    - mocha-circleci-reporter
 
-devScripts:
-  - lint
-  - publish
-  - test
-
-filePattern: '**/*.ls'
-
-ignoreFilePatterns:
-  - 'node_modules/**/*'
-
-stripLoaders: false
-
-transpilers:
-  - extension: .ls
-    module: livescript
+requiredModules:
+  files:
+    dev:
+      - '{features,spec,test}/**/*'
+      - '**/*{.,_,-}{spec,test}.ls'
+      - gulpfile.ls
+    ignore:
+      - 'node_modules/**/*'
+    root: '**/*.ls'
+  stripLoaders: false
+  transpilers:
+    - extension: .ls
+      module: livescript

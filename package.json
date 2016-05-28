@@ -8,17 +8,18 @@
   "description": "Finds and reserves free network ports on the local machine",
   "devDependencies": {
     "chai": "3.5.0",
-    "coveralls": "2.11.8",
-    "dependency-lint": "3.1.2",
+    "coveralls": "2.11.9",
+    "dependency-lint": "4.0.1",
     "gulp": "3.9.1",
     "gulp-exit": "0.0.2",
     "gulp-livescript-istanbul": "0.0.2",
     "gulp-mocha": "2.2.0",
-    "livescript": "1.4.0",
-    "mocha": "2.4.5",
+    "livescript": "1.5.0",
+    "mocha": "2.5.3",
     "mocha-circleci-reporter": "0.0.1",
     "nitroglycerin": "1.1.1",
-    "o-tools": "0.1.4"
+    "o-tools": "0.3.4",
+    "o-tools-livescript": "1.0.4"
   },
   "engines": {
     "npm": ">= 3.0.0"
